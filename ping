@@ -1,0 +1,9 @@
+import os
+ip_list = ["192.168.0.200","192.168.0.201","192.168.0.202","192.168.0.205"]
+for ip in ip_list:
+    response = os.popen(f"ping {ip}").read()
+    if "Received = 4" in response:
+        print("")
+        print(f" {ip} Device is UP")
+    else:
+        print (f"Device {ip} is down")
